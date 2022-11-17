@@ -33,4 +33,15 @@ public class Dish implements Item{
     public String getDescription() {
         return description;
     }
+
+    @Override
+    public int compareTo(Item item) {
+        if (getPrice() == item.getPrice()) {
+            return getName().compareTo(item.getName());
+        } else if (getPrice() > item.getPrice()){
+            return 1;
+        } else {
+            return -1;
+        }
+    }
 }
